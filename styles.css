@@ -1,0 +1,299 @@
+/* Global Styles */
+
+body {
+  display: flex;
+  margin: 0;
+  background: white;
+  font-family: Garamond;
+}
+
+#main {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header Styles */
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(200, 150, 125);
+  color: white;
+  padding: 30px 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+#title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#subtitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* Body Styles */
+
+#content {
+  display: grid;
+  place-items: center;
+  margin-top: 175px;
+}
+
+#img-div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#image {
+  display: block;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 8px;
+  transition: all 250ms ease;
+}
+
+#image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#img-caption {
+  opacity: 0.5;
+}
+
+hr {
+  width: 80%;
+  opacity: 20%;
+}
+
+/* Timeline Styles */
+
+#tribute-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(white, lightgrey);
+  width: 100%;
+}
+
+#timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+}
+
+.timeline-header {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.timeline-header::before,
+.timeline-header::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.timeline-header::before {
+  left: -110px;
+}
+
+.timeline-header::after {
+  right: -110px;
+}
+
+strong {
+  margin-right: 10px;
+  font-size: 1rem;
+  background: lightgrey;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  list-style: none;
+  font-size: 1.25rem;
+  width: 75%;
+  max-width: 1000px;
+  background: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.album-thumb {
+  width: 75px;
+  margin: 17px;
+  height: auto;
+  float: right;
+  border-radius: 4px;
+}
+
+#more-info {
+  background: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Footer Styles */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  max-width: 1350px;
+  padding-top: 65px;
+}
+
+#albums-header {
+  position: absolute;
+  top: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.album-link {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  border-radius: 8px;
+  transition: transform 250ms ease;
+}
+
+.album-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.album-cover {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.album-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.album-link:hover .album-title {
+  opacity: 1;
+}
+
+.author {
+  opacity: 0.2;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+  header {
+    padding-bottom: 10px;
+  }
+
+  #content {
+    margin-top: 100px;
+  }
+
+  #title {
+    font-size: 1.5rem;
+  }
+
+  #subtitle {
+    font-size: 0.75rem;
+  }
+
+  #image {
+    min-width: 20px;
+  }
+
+  strong {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 25px);
+    margin-top: 10px;
+  }
+
+  .timeline-header::before,
+  .timeline-header::after {
+    display: none;
+  }
+
+  .timeline-item {
+    width: 75%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .timeline-item p {
+    margin-top: 40px;
+  }
+
+  .album-thumb {
+    display: none;
+  }
+
+  #more-info {
+    width: 50%;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
